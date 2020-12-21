@@ -10,3 +10,9 @@ mongoose
     .catch(err => console.error(`error connecting to mongo`, err));
 
 const Cat = mongoose.model(`Cat`, {name: String});
+const kitty = new Cat({name: `Ironhacker`});
+
+kitty
+    .save()
+    .then(newCat => console.log(`A new cat is created: ${newCat}!`));
+    .catch(err => console.log(`Error while creating new car ${err}`));
